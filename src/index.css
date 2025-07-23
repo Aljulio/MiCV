@@ -14,7 +14,7 @@ body {
     line-height: 1.6; /* Mejora la legibilidad */
 }
 
-/* Estilos para los encabezados de contenido (h2, h3, etc. dentro de las secciones) */
+/* Estilos para los encabezados de contenido (h1, h2, h3, etc.) */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif; /* Una fuente que destaque y sea moderna para los títulos */
     color: #3498db; /* Azul principal más vibrante */
@@ -25,13 +25,22 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
     font-size: 2.2rem;
     border-bottom: 2px solid #3498db; /* Línea de acento debajo de los títulos de sección */
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem; /* Espacio entre el título y la línea */
     margin-top: 2.5rem; /* Espacio superior para separar secciones */
+    /* Añadido para mejorar el 'respiro' en escritorio */
+    margin-bottom: 1.5rem; /* Asegura espacio después del h2 */
 }
 
 /* Estilos para los párrafos */
 p {
     margin-bottom: 0.8rem;
+}
+
+/* Contenedor principal para centrar el contenido y aplicar márgenes */
+.container {
+    max-width: 960px; /* Ancho máximo para el contenido en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 15px; /* Espaciado lateral */
 }
 
 /* --------------------------------------------- */
@@ -53,7 +62,7 @@ p {
     justify-content: center; /* Centra el grupo de texto y foto. */
     gap: 40px; /* Espacio entre el texto y la foto (puedes ajustar este valor). */
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; /* Un poco más ancho que el .container general para el header */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -85,26 +94,27 @@ p {
     text-overflow: clip;
 }
 
-/* Estilos para la foto de perfil en el encabezado */
+/* Estilos para la foto de perfil en el encabezado (versión de escritorio) */
 #foto-encabezado {
     width: 200px;
     height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: none; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Eliminar borde blanco */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    flex-shrink: 0;
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    border-radius: 8px; /* Bordes ligeramente redondeados (cuadrada con esquinas suaves) */
+    border: none; /* Elimina cualquier borde por defecto */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra para la foto */
+    flex-shrink: 0; /* Evita que la foto se encoja en flexbox */
 }
 
 /* --------------------------------------------- */
 /* ESTILOS GENERALES DE CONTENIDO (SECCIONES) */
 /* --------------------------------------------- */
 
+/* Contenedor con margen superior */
 .container.my-5 {
     padding-top: 2rem;
 }
 
-/* Centra el texto dentro de los componentes */
+/* Centra el texto dentro de los componentes y limita su ancho */
 .container.my-5 > * {
     text-align: center;
     margin-left: auto;
@@ -119,24 +129,24 @@ p {
     border-radius: 12px;
     margin-bottom: 2rem;
     padding: 2.5rem;
-    text-align: left;
+    text-align: left; /* El contenido dentro de la tarjeta se alinea a la izquierda */
 }
 
-/* IMPORTANTE: Estilos para eliminar los puntos de las listas en las secciones de contenido */
+/* Importante: Estilos para eliminar los puntos de las listas en las secciones de contenido */
 #habilidades ul,
 #formacion ul,
 #experiencia ul,
 #portafolio ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+    list-style: none; /* Elimina los puntos predeterminados */
+    padding-left: 0; /* Elimina el padding izquierdo de la lista */
+    margin-left: 0; /* Elimina el margen izquierdo de la lista */
 }
 
 /* ESTILOS PARA LA NAVEGACIÓN INTERNA (LA BARRA DE BOTONES "Mi hoja de vida") */
 .main-content-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Apilado por defecto */
+    align-items: center; /* Centra horizontalmente */
     margin-bottom: 2rem;
     width: 100%;
     text-align: center;
@@ -187,7 +197,7 @@ p {
     margin-bottom: 2rem;
     border-bottom: 2px solid #3498db;
     padding-bottom: 0.5rem;
-    display: inline-block;
+    display: inline-block; /* Permite que el borde inferior se ajuste al texto */
 }
 
 /* Ajuste para la sangría y estilo de los elementos de lista dentro de las secciones */
@@ -199,20 +209,20 @@ p {
     margin-bottom: 10px;
     position: relative;
     padding-left: 0;
-    text-align: center;
+    text-align: left; /* CAMBIO CLAVE: Alineación a la izquierda para las listas en general */
 }
 
 #habilidades li::before,
 #formacion li::before,
 #experiencia li::before,
 #portafolio li::before {
-    content: '•';
+    content: '•'; /* Añade un punto personalizado */
     color: #3498db;
     font-weight: bold;
     display: inline-block;
     width: 1em;
-    position: static;
-    margin-right: 0.3em;
+    position: static; /* Asegura que el punto esté en flujo normal */
+    margin-right: 0.5em; /* Aumenta el espacio entre el punto y el texto */
 }
 
 /* Estilos para las líneas divisorias */
@@ -222,27 +232,27 @@ hr {
 }
 
 /* --------------------------------------------- */
-/* ESTILOS PARA LA SECCIÓN DE DATOS PERSONALES */
+/* ESTILOS PARA LA SECCIÓN DE DATOS PERSONALES (GRID) */
 /* --------------------------------------------- */
 
 .personal-details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
     gap: 20px 40px;
     max-width: 900px;
     margin: 0 auto;
-    justify-items: start;
+    justify-items: start; /* Alinea los ítems al inicio de la celda */
     padding: 0 20px;
 }
 
 .personal-item {
     box-sizing: border-box;
     line-height: 1.8;
-    text-align: left;
+    text-align: left; /* Alinea el texto a la izquierda dentro de cada ítem */
 }
 
 .personal-item.full-width {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula */
     text-align: center;
 }
 
@@ -252,86 +262,102 @@ hr {
 
 /* Este breakpoint apunta a pantallas medianas y pequeñas (hasta 991.98px de ancho) */
 @media (max-width: 991.98px) {
+    /* Encabezado: Ajuste de padding para más 'respiro' */
+    .main-header {
+        padding: 50px 15px; /* Aumentado el padding vertical y añadido padding lateral */
+    }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Encabezado */
     .main-header .container.header-content {
         flex-direction: column; /* Apilar en columna en móviles y tabletas */
         text-align: center; /* Centrar texto */
-        gap: 20px;
-        padding: 0 15px;
+        gap: 25px; /* Ligeramente más espacio entre elementos del header */
+        padding: 0 10px; /* Ajuste el padding lateral interno del contenedor del header */
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Contenedor de texto del encabezado */
+    /* Contenedor de texto del encabezado: centrar y ocupar ancho completo */
     .main-header .header-text-container {
-        text-align: center; /* Centrar el texto en móviles */
+        text-align: center;
         flex-basis: auto;
-        max-width: 100%; /* Asegurar que ocupe todo el ancho disponible en móviles */
-        padding: 0 10px; /* Añadir un poco de padding para que el texto no se pegue a los bordes */
+        max-width: 100%;
+        padding: 0 5px; /* Reducido un poco para dar más espacio al nombre en pantallas más pequeñas */
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Título del nombre en encabezado */
+    /* Título del nombre en encabezado: ajustar tamaño para móviles */
     .main-header h1 {
-        font-size: 2.0rem; /* Ajuste para móviles, un poco más grande que el último ajuste */
-        white-space: normal; /* Permitir que el nombre se envuelva en móviles si es muy largo */
-        word-break: break-word; /* Romper palabras largas si es necesario para evitar desbordamiento */
+        font-size: 2.0rem; /* Mantiene 2.0rem como base, si es muy largo, se romperá */
+        white-space: normal;
+        word-break: break-word;
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Subtítulo del encabezado */
+    /* Subtítulo del encabezado: ajustar tamaño para móviles */
     .main-header p.lead {
-        font-size: 1.0rem; /* Ajuste para móviles */
-        white-space: normal; /* Permitir que el subtítulo se envuelva en móviles */
+        font-size: 1.0rem;
+        white-space: normal;
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Foto de perfil */
+    /* Foto de perfil: tamaño y forma responsiva */
     #foto-encabezado {
-        width: 140px; /* Tamaño de la foto ligeramente más pequeño en móviles */
+        width: 140px;
         height: 140px;
+        border-radius: 50%; /* La foto se hace circular en móviles */
         border-width: 0;
-        border-radius: 50%; /* Hacer la foto redonda para un look moderno en móvil */
+        margin-bottom: 15px; /* Añade espacio debajo de la foto */
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Navegación interna "Mi hoja de vida" */
+    /* Navegación interna "Mi hoja de vida": apilar botones y centrar */
     .main-content-nav ul {
-        flex-direction: column; /* Apilar los botones en columna en pantallas pequeñas. */
+        flex-direction: column;
         gap: 10px;
-        align-items: center; /* Centrar los botones apilados */
-        max-width: 100%; /* Eliminar el límite de ancho para móviles */
+        align-items: center;
+        max-width: 100%;
     }
 
     .main-content-nav ul li {
-        flex: 0 0 auto; /* No crecen y se ajustan al contenido. */
-        width: 100%; /* Los botones ocupan el ancho completo de su contenedor */
+        flex: 0 0 auto;
+        width: 100%;
         max-width: 250px; /* Limita el ancho máximo para que no sean demasiado anchos en tablets */
     }
 
     .main-content-nav ul li a {
-        padding: 10px 20px; /* Un poco más de padding para que los botones sean más fáciles de tocar */
-        font-size: 1rem; /* Ajustar el tamaño de fuente si es necesario */
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Título "Mi hoja de vida" */
+    /* Títulos de sección (h2): Ajuste de tamaño y espacio para móviles */
+    h2 {
+        font-size: 1.8rem; /* Ligeramente más pequeño para móviles */
+        padding-bottom: 0.4rem; /* Menos espacio entre el texto y la línea */
+        margin-top: 2rem; /* Reduce el espacio superior del h2 */
+        margin-bottom: 1.2rem; /* Reduce el espacio inferior del h2 */
+    }
+
+    /* Título "Mi hoja de vida" en el cuerpo: ajustar tamaño */
     .mi-hoja-de-vida-title {
         font-size: 1.8rem;
         padding-bottom: 0.3rem;
     }
 
-    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrado general de contenido */
+    /* Centrado general de contenido en secciones (solo el contenedor principal se centra) */
     .container.my-5 > * {
-        text-align: center;
+        text-align: left; /* CAMBIO CLAVE: Volver a alinear el texto de las secciones a la izquierda */
     }
 
-    /* Ajuste de los puntos en móviles para listas centradas */
+    /* Ajuste de los puntos en móviles para listas */
     #habilidades li::before,
     #formacion li::before,
     #experiencia li::before,
     #portafolio li::before {
-        margin-right: 0.3em;
+        margin-right: 0.5em; /* Mantener espacio entre punto y texto */
     }
 
     /* MEDIA QUERY MÁS ESPECÍFICA PARA DISPOSITIVOS MÁS PEQUEÑOS (teléfonos) */
     @media (max-width: 575.98px) { /* Breakpoint para 'sm' (small) en Bootstrap, usualmente teléfonos */
+        /* Encabezado en teléfonos más pequeños */
+        .main-header {
+            padding: 40px 10px; /* Más padding en el header para pantallas muy pequeñas */
+        }
         .main-header h1 {
-            font-size: 1.6rem; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Tamaño de fuente aún más pequeño para teléfonos */
+            font-size: 1.5rem; /* Título un poco más pequeño en móviles */
         }
 
         .main-header p.lead {
@@ -339,28 +365,35 @@ hr {
         }
 
         #foto-encabezado {
-            width: 100px; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Foto más pequeña en teléfonos */
-            height: 100px;
+            width: 90px; /* Foto más pequeña en teléfonos */
+            height: 90px;
         }
 
-        /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Datos personales en una sola columna y centrado */
+        /* Títulos de sección (h2) en teléfonos más pequeños */
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Datos personales: alineación a la izquierda */
         .personal-details-grid {
-            grid-template-columns: 1fr; /* Una sola columna para datos personales en teléfonos */
+            grid-template-columns: 1fr;
             gap: 10px;
             padding: 0 15px;
-            justify-items: center; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrar los ítems en la cuadrícula */
+            justify-items: left; /* CAMBIO CLAVE: Alinear ítems a la izquierda */
         }
 
         .personal-item,
         .personal-item.full-width {
-            grid-column: auto; /* Restablecer para una sola columna */
-            text-align: center; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrar todo el texto en teléfonos */
-            width: 100%; /* Asegurar que cada ítem ocupe el ancho completo disponible */
-            max-width: 300px; /* Limitar el ancho máximo para que no se estire demasiado en pantallas más grandes de teléfono */
+            grid-column: auto;
+            text-align: left; /* CAMBIO CLAVE: Alinear el texto a la izquierda en teléfonos */
+            width: 100%;
+            max-width: 300px;
         }
 
         .main-content-nav ul li {
-            max-width: 180px; /* Reducir aún más el ancho de los botones en teléfonos pequeños */
+            max-width: 180px;
         }
     }
 }
