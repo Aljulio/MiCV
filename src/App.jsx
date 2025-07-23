@@ -22,7 +22,8 @@ function App() {
                 <p className="lead">Bachiller en Ciencias y Letras con Orientación en Electricidad</p>
             </div>
             <div className="header-photo-container">
-                <img src="/images/mi-foto-perfil.jpg" alt="Foto de Julio Alberto Hernández Morales" className="img-fluid" id="foto-encabezado" />
+                {/* RUTA DE LA IMAGEN CORREGIDA: Se añadió /MiCV/ para GitHub Pages */}
+                <img src="/MiCV/images/mi-foto-perfil.jpg" alt="Foto de Julio Alberto Hernández Morales" className="img-fluid" id="foto-encabezado" />
             </div>
         </div>
       </header>
