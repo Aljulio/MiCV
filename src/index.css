@@ -1,0 +1,366 @@
+/* Importar fuentes de Google Fonts para un diseño moderno */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* --------------------------------------------- */
+/* ESTILOS GLOBALES Y DEL CUERPO */
+/* --------------------------------------------- */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente para el texto general del CV */
+    background-color: #f0f2f5; /* Un gris muy claro para el fondo */
+    color: #444444; /* Color de texto general oscuro y moderno */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Estilos para los encabezados de contenido (h2, h3, etc. dentro de las secciones) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Una fuente que destaque y sea moderna para los títulos */
+    color: #3498db; /* Azul principal más vibrante */
+    font-weight: 700; /* Negrita para los títulos */
+    margin-bottom: 1.5rem; /* Espaciado uniforme para los títulos */
+}
+
+h2 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid #3498db; /* Línea de acento debajo de los títulos de sección */
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem; /* Espacio superior para separar secciones */
+}
+
+/* Estilos para los párrafos */
+p {
+    margin-bottom: 0.8rem;
+}
+
+/* --------------------------------------------- */
+/* ESTILOS ESPECÍFICOS PARA EL ENCABEZADO (HEADER) */
+/* --------------------------------------------- */
+
+.main-header {
+    background: linear-gradient(to right, #3498db, #2980b9); /* Degradado sutil para el fondo del header */
+    color: white;
+    padding: 60px 0; /* Más espaciado superior e inferior para una sensación más premium */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para el header */
+    text-align: center; /* Centrar todo el contenido del header por defecto */
+}
+
+.main-header .container.header-content {
+    display: flex;
+    flex-direction: row; /* Predeterminado: lado a lado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: center; /* Centra el grupo de texto y foto. */
+    gap: 40px; /* Espacio entre el texto y la foto (puedes ajustar este valor). */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header .header-text-container {
+    text-align: center; /* Alinea el texto al centro */
+    flex-grow: 0;
+    flex-shrink: 1;
+    max-width: 800px; /* Ancho máximo para el texto del encabezado */
+}
+
+.main-header h1 {
+    font-size: 2.6rem; /* Reducido ligeramente el tamaño de fuente para el nombre */
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    white-space: normal;
+    line-height: 1.2;
+}
+
+.main-header p.lead {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0;
+    font-weight: 500;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* Estilos para la foto de perfil en el encabezado */
+#foto-encabezado {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: none; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Eliminar borde blanco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+/* --------------------------------------------- */
+/* ESTILOS GENERALES DE CONTENIDO (SECCIONES) */
+/* --------------------------------------------- */
+
+.container.my-5 {
+    padding-top: 2rem;
+}
+
+/* Centra el texto dentro de los componentes */
+.container.my-5 > * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.card {
+    border: none;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    text-align: left;
+}
+
+/* IMPORTANTE: Estilos para eliminar los puntos de las listas en las secciones de contenido */
+#habilidades ul,
+#formacion ul,
+#experiencia ul,
+#portafolio ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* ESTILOS PARA LA NAVEGACIÓN INTERNA (LA BARRA DE BOTONES "Mi hoja de vida") */
+.main-content-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.main-content-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente línea. */
+    gap: 20px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-bottom: 0;
+    max-width: 700px; /* Limita el ancho para que los elementos se envuelvan antes */
+}
+
+.main-content-nav ul li {
+    flex: 1 1 auto; /* Permite que los elementos se adapten al contenido y se envuelvan */
+    min-width: 150px; /* Asegura un ancho mínimo para cada botón */
+    text-align: center;
+}
+
+.main-content-nav ul li a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block; /* Asegura que el enlace ocupe todo el espacio de su li para el clic */
+}
+
+.main-content-nav ul li a:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ESTILOS PARA EL TÍTULO "Mi hoja de vida" en el cuerpo */
+.mi-hoja-de-vida-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Ajuste para la sangría y estilo de los elementos de lista dentro de las secciones */
+#habilidades li,
+#formacion li,
+#experiencia li,
+#portafolio li {
+    margin-left: 0;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 0;
+    text-align: center;
+}
+
+#habilidades li::before,
+#formacion li::before,
+#experiencia li::before,
+#portafolio li::before {
+    content: '•';
+    color: #3498db;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: static;
+    margin-right: 0.3em;
+}
+
+/* Estilos para las líneas divisorias */
+hr {
+    border-top: 1px solid #e0e0e0;
+    margin: 3rem 0;
+}
+
+/* --------------------------------------------- */
+/* ESTILOS PARA LA SECCIÓN DE DATOS PERSONALES */
+/* --------------------------------------------- */
+
+.personal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: start;
+    padding: 0 20px;
+}
+
+.personal-item {
+    box-sizing: border-box;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.personal-item.full-width {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* --------------------------------------------- */
+/* MEDIA QUERIES (PARA MÓVILES Y TABLETAS) */
+/* --------------------------------------------- */
+
+/* Este breakpoint apunta a pantallas medianas y pequeñas (hasta 991.98px de ancho) */
+@media (max-width: 991.98px) {
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Encabezado */
+    .main-header .container.header-content {
+        flex-direction: column; /* Apilar en columna en móviles y tabletas */
+        text-align: center; /* Centrar texto */
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Contenedor de texto del encabezado */
+    .main-header .header-text-container {
+        text-align: center; /* Centrar el texto en móviles */
+        flex-basis: auto;
+        max-width: 100%; /* Asegurar que ocupe todo el ancho disponible en móviles */
+        padding: 0 10px; /* Añadir un poco de padding para que el texto no se pegue a los bordes */
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Título del nombre en encabezado */
+    .main-header h1 {
+        font-size: 2.0rem; /* Ajuste para móviles, un poco más grande que el último ajuste */
+        white-space: normal; /* Permitir que el nombre se envuelva en móviles si es muy largo */
+        word-break: break-word; /* Romper palabras largas si es necesario para evitar desbordamiento */
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Subtítulo del encabezado */
+    .main-header p.lead {
+        font-size: 1.0rem; /* Ajuste para móviles */
+        white-space: normal; /* Permitir que el subtítulo se envuelva en móviles */
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Foto de perfil */
+    #foto-encabezado {
+        width: 140px; /* Tamaño de la foto ligeramente más pequeño en móviles */
+        height: 140px;
+        border-width: 0;
+        border-radius: 50%; /* Hacer la foto redonda para un look moderno en móvil */
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Navegación interna "Mi hoja de vida" */
+    .main-content-nav ul {
+        flex-direction: column; /* Apilar los botones en columna en pantallas pequeñas. */
+        gap: 10px;
+        align-items: center; /* Centrar los botones apilados */
+        max-width: 100%; /* Eliminar el límite de ancho para móviles */
+    }
+
+    .main-content-nav ul li {
+        flex: 0 0 auto; /* No crecen y se ajustan al contenido. */
+        width: 100%; /* Los botones ocupan el ancho completo de su contenedor */
+        max-width: 250px; /* Limita el ancho máximo para que no sean demasiado anchos en tablets */
+    }
+
+    .main-content-nav ul li a {
+        padding: 10px 20px; /* Un poco más de padding para que los botones sean más fáciles de tocar */
+        font-size: 1rem; /* Ajustar el tamaño de fuente si es necesario */
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Título "Mi hoja de vida" */
+    .mi-hoja-de-vida-title {
+        font-size: 1.8rem;
+        padding-bottom: 0.3rem;
+    }
+
+    /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrado general de contenido */
+    .container.my-5 > * {
+        text-align: center;
+    }
+
+    /* Ajuste de los puntos en móviles para listas centradas */
+    #habilidades li::before,
+    #formacion li::before,
+    #experiencia li::before,
+    #portafolio li::before {
+        margin-right: 0.3em;
+    }
+
+    /* MEDIA QUERY MÁS ESPECÍFICA PARA DISPOSITIVOS MÁS PEQUEÑOS (teléfonos) */
+    @media (max-width: 575.98px) { /* Breakpoint para 'sm' (small) en Bootstrap, usualmente teléfonos */
+        .main-header h1 {
+            font-size: 1.6rem; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Tamaño de fuente aún más pequeño para teléfonos */
+        }
+
+        .main-header p.lead {
+            font-size: 0.9rem;
+        }
+
+        #foto-encabezado {
+            width: 100px; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Foto más pequeña en teléfonos */
+            height: 100px;
+        }
+
+        /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Datos personales en una sola columna y centrado */
+        .personal-details-grid {
+            grid-template-columns: 1fr; /* Una sola columna para datos personales en teléfonos */
+            gap: 10px;
+            padding: 0 15px;
+            justify-items: center; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrar los ítems en la cuadrícula */
+        }
+
+        .personal-item,
+        .personal-item.full-width {
+            grid-column: auto; /* Restablecer para una sola columna */
+            text-align: center; /* **AJUSTE ESPECÍFICO PARA MÓVILES**: Centrar todo el texto en teléfonos */
+            width: 100%; /* Asegurar que cada ítem ocupe el ancho completo disponible */
+            max-width: 300px; /* Limitar el ancho máximo para que no se estire demasiado en pantallas más grandes de teléfono */
+        }
+
+        .main-content-nav ul li {
+            max-width: 180px; /* Reducir aún más el ancho de los botones en teléfonos pequeños */
+        }
+    }
+}
